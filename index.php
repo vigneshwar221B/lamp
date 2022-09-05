@@ -1,3 +1,16 @@
 <?php
-  echo "<h1>hello!</h1>";
+$servername = "terraform-20220905111348513400000001.ckc51skzjcy0.us-east-1.rds.amazonaws.com";
+$username = "root";
+$password = "password";
+
+echo "$(hostname -f)";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
 ?>

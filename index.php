@@ -1,7 +1,7 @@
 <?php
 
-$servername = "terraform-20220905111348513400000001.ckc51skzjcy0.us-east-1.rds.amazonaws.com";
-$username = "root";
+$servername = trim(file_get_contents("/home/ubuntu/host.txt"));
+$username = trim(file_get_contents("/home/ubuntu/username.txt"));
 $password = trim(file_get_contents("/home/ubuntu/password.txt"));
 //$password="password";
 
@@ -9,6 +9,7 @@ $hostname = gethostname();
 echo "<h1> from: $hostname </h1>";
 echo "<p>";
 echo "password: $password";
+echo "<p>";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
